@@ -1,22 +1,16 @@
 
-
 import java.util.Arrays;
 import java.util.Random;
-
 public class Task1 {
     public static void main(String[] args) {
 
     int[] masive = new int[50];
-
     сreatngAnArray(masive);
 
     System.out.println("Created array: " + Arrays.toString(masive));
-
     System.out.println("Sorted array:  " + Arrays.toString(sortedArray(masive)));
-
     System.out.println("Count unique elements: " + "[" + countUniqueElements(sortedArray(masive)) + "]");
 }
-
     public static int[] сreatngAnArray(int[] masive) {
         Random randomArray = new Random();
         for (int i = 0; i < masive.length; i++) {
@@ -24,7 +18,6 @@ public class Task1 {
         }
         return masive;
     }
-
     public static int[] sortedArray(int[] masive) {
         int[] copyArray = Arrays.copyOf(masive, masive.length);
         for (int i = 1; i < copyArray.length; i++) {
@@ -38,7 +31,6 @@ public class Task1 {
         }
         return copyArray;
     }
-
     public static int countUniqueElements(int[] masive) {
         int elements = masive[0];
         int rezult = 1;

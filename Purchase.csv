@@ -1,0 +1,11 @@
+type,series,model,diagonal,screen type,country,price
+Telephone,S-10,Samsung,6,QLED,none,200
+Television,RTI-14,Sumsung,25,LED,China,1500
+Telephone,iPhone-14,Apple,6,OLED,China,1100
+Television,OLED55C24LA4,LG,55,OLED,Poland,1500
+Telephone,G32,Motorola,6,LCD,China,180
+Television,55OLED807/12,Philips,55,OLED,Poland,1900
+Telephone,C21,,6,IPS,China,110
+Television,XR55A90JCEP,Sony,55,OLED,Slovakia,2200
+Telephone,Note11,Infinix,6,AMOLED,China,150
+Television,55S81,Skyworth,55,OLED,China,1250

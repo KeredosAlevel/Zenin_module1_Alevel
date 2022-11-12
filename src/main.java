@@ -60,8 +60,7 @@ public class main<MaksimZenim> {
 
     public static String sortedChecks(List<Invoice> invoices) {
         
-        List<Invoice> ageSort = invoices.stream().sorted(Comparator.comparing(invoice -> invoice.customer.age))
-                .collect(Collectors.toList());
+        List<Invoice> ageSort = invoices.stream().sorted(Comparator.comparing(invoice -> invoice.customer.age)) .collect(Collectors.toList());
         
         Collections.reverse(ageSort);
         

@@ -7,8 +7,7 @@ public class main<MaksimZenim> {
         int telephones = (int) invoices.stream().flatMap(x -> (x.purchase.stream())).filter(x ->x.toString().contains("Telephone")).count();
         int televisions = (int) invoices.stream().flatMap(x -> (x.purchase.stream())).filter(x ->x.toString().contains("Television")).count();
 
-        return "Number of items sold by category Televisions: " + televisions + "\n" +
-                "Number of items sold by category Telephones: " + telephones;
+        return "Number of items sold by category Televisions: " + televisions + "\n" +"Number of items sold by category Telephones: " + telephones;
     }
 
     public static String smalCheck(List<Invoice> invoices) {
@@ -38,6 +37,7 @@ public class main<MaksimZenim> {
     public static String checksOneType(List<Invoice> invoices) {
         List<Invoice> telephoneList = invoices.stream().filter(x -> x.purchase.toString().contains("Telephone")).filter(x -> 
                                             !x.purchase.toString().contains("Television")).collect(Collectors.toList());
+        
         List<Invoice> televisionList = invoices.stream().filter(x -> x.purchase.toString().contains("Television")).filter(x -> 
                                             !x.purchase.toString().contains("Telephone")).collect(Collectors.toList());
 
@@ -45,22 +45,28 @@ public class main<MaksimZenim> {
     }
 
     public static String checksFrstThre(List<Invoice> invoices) {
+        
         List<Invoice> firstThreeChecks = invoices.stream().limit(3).collect(Collectors.toList());
 
         return "Checking the first three checks: " + firstThreeChecks;
     }
 
     public static String checksLegalAge(List<Invoice> invoices) {
+        
         List<Invoice> checksU18 = invoices.stream().filter(x -> (x.customer.age) < 18).collect(Collectors.toList());
 
         return "Underage Buyer Information: " + checksU18;
     }
 
     public static String sortedChecks(List<Invoice> invoices) {
+        
         List<Invoice> ageSort = invoices.stream().sorted(Comparator.comparing(invoice -> invoice.customer.age))
                 .collect(Collectors.toList());
+        
         Collections.reverse(ageSort);
+        
         List<Invoice> quantitySort = ageSort.stream().sorted(Comparator.comparing(invoice -> (long) invoice.purchase.size())).collect(Collectors.toList());
+        
         List<Invoice> totalSum = quantitySort.stream().sorted(Comparator.comparing(invoice -> invoice.purchase.stream().
                                sorted(Comparator.comparing(Purchase::getPrice)).mapToInt(Purchase::getPrice).sum())).collect(Collectors.toList());
 
